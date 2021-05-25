@@ -1,0 +1,44 @@
+<h1>Seven Lakes Application Assignment</h1>
+
+<div class="form-group" *ngIf="flag == 'post'">
+  <label for="search-text">Search Text</label>
+  <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+    [(ngModel)]="searchText" placeholder="Search by User Name" 
+    autofocus>
+</div>
+
+
+
+<div *ngIf="flag == 'post'">
+  <h3>Post List</h3>
+<div *ngFor="let post of postList | appFilter: searchText" class="posts">
+
+    <div class="postBox" >
+      <h4 style="cursor: pointer;" (click)="postInfo(post.postDetailId)">{{post.title}}</h4>
+      <div class="userName" (click)="userInfo(post.userId)">{{post.userName}}</div>
+    </div>
+</div>
+</div>
+
+<div *ngIf="postDetail && flag=='postDetail' " class="postDetailBox">
+  <h3>Post detail</h3>
+  <div><span class="label">Title: </span>{{postDetail.title}}</div>
+  <div><span class="label">User Name: </span>{{postDetail.userName}}</div>
+  <div><span class="label">Comment: </span>{{postDetail.comment}}</div>
+  <div><span class="label">Email: </span>{{postDetail.email}}</div>
+</div>
+
+<div *ngIf="userDetail && flag=='userDetail'" class="userBox">
+  <h3>User detail</h3>
+
+  <div><span class="label">User Name: </span>{{userDetail.userName}}</div>
+  <div><span class="label">Full Name: </span>{{userDetail.fullName}}</div>
+  <div><span class="label">Email: </span>{{userDetail.email}}</div>
+  <div><span class="label">Website: </span>{{userDetail.websites}}</div>
+  <div><span class="label">Company Detail: </span>{{userDetail.companyDetails}}</div>
+  </div>
+
+  <button *ngIf="flag != 'post'" class="btn" (click)="navigate()" >back</button>
+
+
+  

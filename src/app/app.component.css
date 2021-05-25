@@ -1,0 +1,36 @@
+.postBox{
+display: inline-block;
+height: 100px;
+width: 100px;
+background-color: #eee;
+margin: 20px;
+padding: 20px;
+}
+
+.posts{
+    display: contents;
+}
+
+.userName{
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    color: blue;
+}
+
+.postDetailBox{
+    background-color: #eee;
+    width: fit-content;
+    margin: 16px;
+    padding: 52px;
+}
+
+.userBox{
+    background-color: #eee;
+    width: fit-content;
+    margin: 16px;
+    padding: 52px;
+}
+.label{
+    font-weight: 500;
+}
